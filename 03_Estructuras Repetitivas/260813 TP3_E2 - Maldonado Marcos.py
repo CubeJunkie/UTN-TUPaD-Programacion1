@@ -90,12 +90,19 @@ if login_exitoso == True:
                     # Si la clave tiene al menos 6 caracteres, se asigna valor verdadero a la bandera
                     if len(clave_nueva) >= 6:
                         clave_nueva_valida = True
-                        CLAVE_CORRECTA = clave_nueva
-                        print(f'La nueva clave es: {CLAVE_CORRECTA}')
-
                     # En caso contrario se indica el error en pantalla
                     else:
                         print('- ERROR - La clave debe tener 6 caracteres como mínimo')
+
+                # Se pide confirmación de clave nueva y se chequea que coincidan
+                confirmacion_clave_nueva = input('Una vez más para confirmar: ')
+                if clave_nueva == confirmacion_clave_nueva:
+                    CLAVE_CORRECTA = clave_nueva
+                    print(f'La nueva clave es: {CLAVE_CORRECTA}')
+                # Si la confirmación no coincide, se indica el error en pantalla y se cancela el cambio
+                else:
+                    print('La confirmación de clave no coincide. Cambio cancelado')
+                
             case '3':
                 # Se muestra un mensaje motivacional
                 print(f'{FRASE_MOTIVACIONAL}')
