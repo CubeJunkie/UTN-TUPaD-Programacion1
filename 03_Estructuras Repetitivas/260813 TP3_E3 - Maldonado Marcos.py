@@ -317,27 +317,53 @@ while opcion != '5':
 
                 # Se inicializa un contador de turnos disponibles en cero
                 turnos_disponibles = 0
+                # Se inicializa un contador de turnos en lunes
+                turnos_lunes = 0
+                # Se inicializa un contador de turnos en martes
+                turnos_martes = 0
 
                 # Se cuenta analizando turno por turno
                 if lunes_1 == '':
                     turnos_disponibles += 1
+                else:
+                    turnos_lunes += 1
                 if lunes_2 == '':
                     turnos_disponibles += 1
+                else:
+                    turnos_lunes += 1
                 if lunes_3 == '':
                     turnos_disponibles += 1
+                else:
+                    turnos_lunes += 1
                 if lunes_4 == '':
                     turnos_disponibles += 1
+                else:
+                    turnos_lunes += 1
                 if martes_1 == '':
                     turnos_disponibles += 1
+                else:
+                    turnos_martes += 1
                 if martes_2 == '':
                     turnos_disponibles += 1
+                else:
+                    turnos_martes += 1
                 if martes_3 == '':
                     turnos_disponibles += 1
+                else:
+                    turnos_martes += 1
 
                 # Se indica en pantalla la cantidad de turnos ocupados y disponibles
                 print('--------------------')
                 print(f'Turnos Ocupados: {7 - turnos_disponibles}')
                 print(f'Turnos Disponibles: {turnos_disponibles}')
+
+                # Se indica en pantalla el día con más turnos o empate
+                if turnos_lunes > turnos_martes:
+                    print(f'Día con más turnos: Lunes ({turnos_lunes})')
+                elif turnos_martes > turnos_lunes:
+                    print(f'Día con más turnos: Martes ({turnos_martes})')
+                else:
+                    print(f'Día con más turnos: Empate ({turnos_lunes})')
 
         case '5':
             # Se muestra mensaje de despedida de menú
