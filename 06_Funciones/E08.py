@@ -2,7 +2,7 @@
 import datos.ingreso_datos as ing
 
 # Se importa la función requerida desde el módulo de índices del proyecto
-from calculos.indices import imc
+from calculos.indices import calcular_imc
 
 # Se muestra en pantalla el encabezado
 print('\n---EJERCICIO N.º 8 - Índice de masa corporal.---')
@@ -15,8 +15,8 @@ peso = ing.float_positivo('Peso (kg)')
 # Se hace un llamado a la función definida para ingresar decimales mayores que cero
 altura = ing.float_positivo('Altura (m)')
 
-# Se hace un llamado a la función imc() para obtener el índice de masa corporal
-imc = imc(peso, altura)
+# Se hace un llamado a la función calcular_imc() para obtener el índice de masa corporal
+imc = calcular_imc(peso, altura)
 
 print('---------------------------')
 
